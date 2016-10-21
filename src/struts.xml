@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+	"http://struts.apache.org/dtds/struts-2.3.dtd">
+<struts>
+	<package name="default" namespace="/" extends="struts-default">
+		<action name="author" class="library.action.BookAction" method="authorBook">
+			<result name="success">/authorbooks.jsp</result>
+			<result name="fail">/fail.jsp</result>
+		</action>
+		
+		<action name="show" class="library.action.BookAction" method="showBook">
+			<result name="success">/book.jsp</result>
+		</action>
+		
+		<action name="delete" class="library.action.BookAction" method="delBook">
+      <result type="redirect">home.jsp</result>
+      	</action>
+      	
+      	<action name = "query" class = "library.action.BookAction" method="queryBook">
+      		<result>/upbook.jsp</result>
+      	</action>
+      	<action name ="upbook" class="library.action.BookAction" method="upbook">
+      	<result type ="redirect">home.jsp</result>
+      	</action>
+      	
+      	<action name ="addbook" class="library.action.BookAction" method="addbook">
+      	<result type ="redirect">home.jsp</result>
+      	</action>
+		
+	</package>
+</struts>
